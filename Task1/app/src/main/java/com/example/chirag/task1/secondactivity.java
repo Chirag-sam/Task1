@@ -18,15 +18,12 @@ public class secondactivity extends AppCompatActivity {
 
     }
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if ((keyCode == KeyEvent.KEYCODE_BACK)) {
-            Bundle datadata=getIntent().getExtras();
-            String data = datadata.getString("data");
-
-            Toast.makeText(secondactivity.this, "Hello "+data, Toast.LENGTH_LONG).show();
-
-
-        }
-        return super.onKeyDown(keyCode, event);
+            public void onBackPressed() {
+        Bundle datadata = getIntent().getExtras();
+        String data = datadata.getString("data");
+        Toast.makeText(secondactivity.this, "Hello " + data, Toast.LENGTH_LONG).show();
+        Intent i = new Intent(secondactivity.this,mainactivity.class);
+        startActivity(i);
     }
+
 }
